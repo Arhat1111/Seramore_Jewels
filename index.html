@@ -12,16 +12,23 @@
 
   <style>
     :root {
-      --bg: #fbf8f3;
-      --bg-soft: #f4ede3;
-      --text: #201815;
-      --muted: #756961;
-      --gold: #b89255;
-      --gold-soft: #e5d2aa;
+      --bg: #fbf7f2;
+      --bg-soft: #f3eadf;
+      --text: #2d2520;
+      --muted: #8a7c72;
+      --gold: #b99b6b;
+      --gold-soft: #e9d7b8;
       --ivory: #fffdf8;
-      --brown: #33231d;
-      --line: rgba(32, 24, 21, 0.12);
-      --shadow: 0 24px 70px rgba(43, 31, 22, 0.13);
+      --brown: #8f8676;
+      --taupe: #b9b09e;
+      --blush: #f6e3e8;
+      --rose: #d8b8c3;
+      --linen: #e9dfcf;
+      --sage: #a7ad8a;
+      --sky: #b7c6d9;
+      --butter: #f1e5ac;
+      --line: rgba(88, 75, 63, 0.13);
+      --shadow: 0 24px 70px rgba(128, 109, 89, 0.14);
       --radius-xl: 34px;
       --radius-md: 20px;
       --ease: cubic-bezier(.16, 1, .3, 1);
@@ -70,7 +77,7 @@
       border-radius: 50%;
       pointer-events: none;
       z-index: 1;
-      background: radial-gradient(circle, rgba(184,146,85,.2), transparent 65%);
+      background: radial-gradient(circle, rgba(216,184,195,.28), transparent 65%);
       transform: translate(-50%, -50%);
       filter: blur(6px);
       opacity: 0.7;
@@ -119,8 +126,8 @@
       display: grid;
       place-items: center;
       color: var(--ivory);
-      background: radial-gradient(circle at 35% 25%, #f3dfac, #b89255 48%, #5c3e2f 100%);
-      box-shadow: 0 12px 24px rgba(184,146,85,.35);
+      background: radial-gradient(circle at 35% 25%, #fff2d4, #d8b8c3 48%, #8f8676 100%);
+      box-shadow: 0 12px 24px rgba(216,184,195,.35);
       font-family: "Playfair Display", serif;
       font-size: 21px;
     }
@@ -196,8 +203,9 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 75% 20%, rgba(184,146,85,.24), transparent 35%),
-        radial-gradient(circle at 20% 70%, rgba(227,207,169,.34), transparent 35%);
+        radial-gradient(circle at 78% 18%, rgba(246,227,232,.82), transparent 34%),
+        radial-gradient(circle at 18% 70%, rgba(241,229,172,.48), transparent 34%),
+        radial-gradient(circle at 52% 45%, rgba(183,198,217,.28), transparent 38%);
       z-index: 0;
     }
 
@@ -314,8 +322,8 @@
       aspect-ratio: 3 / 4.25;
       border-radius: 44px;
       overflow: hidden;
-      background: var(--ivory);
-      border: 1px solid rgba(255,255,255,.7);
+      background: linear-gradient(145deg, var(--blush), var(--linen));
+      border: 1px solid rgba(255,255,255,.78);
       box-shadow: var(--shadow);
       transform: rotate(-4deg);
       transition: transform .4s var(--ease);
@@ -516,7 +524,7 @@
       position: relative;
       overflow: hidden;
       border-block: 1px solid var(--line);
-      background: var(--brown);
+      background: linear-gradient(90deg, var(--blush), var(--linen), var(--sage), var(--sky));
       color: var(--ivory);
       padding: 22px 0;
       white-space: nowrap;
@@ -532,7 +540,7 @@
     }
 
     .marquee-track span {
-      color: var(--gold-soft);
+      color: rgba(255,255,255,.75);
       font-style: italic;
     }
 
@@ -614,11 +622,11 @@
     }
 
     .products-wrap {
-      background: var(--ivory);
+      background: linear-gradient(145deg, rgba(255,253,248,.95), rgba(246,227,232,.55));
       border: 1px solid var(--line);
       border-radius: 42px;
       padding: clamp(18px, 3vw, 34px);
-      box-shadow: 0 20px 70px rgba(60,38,25,.08);
+      box-shadow: 0 20px 70px rgba(128,109,89,.09);
     }
 
     .product-tabs {
@@ -673,7 +681,7 @@
     .product-image {
       height: 315px;
       overflow: hidden;
-      background: var(--bg-soft);
+      background: linear-gradient(135deg, var(--blush), var(--linen));
     }
 
     .product-image img {
@@ -731,7 +739,7 @@
       content: "";
       position: absolute;
       inset: -18%;
-      background-image: linear-gradient(rgba(20,12,9,.42), rgba(20,12,9,.55)), url("https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1800&q=85");
+      background-image: linear-gradient(rgba(143,134,118,.25), rgba(143,134,118,.48)), url("https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1800&q=85");
       background-size: cover;
       background-position: center;
       transform: translateY(var(--bannerY, 0px)) scale(1.1);
@@ -792,7 +800,7 @@
     }
 
     .instagram-section {
-      background: var(--brown);
+      background: linear-gradient(145deg, #8f8676, #b9b09e 48%, #d8b8c3);
       color: var(--ivory);
       border-radius: 46px 46px 0 0;
       margin-top: 60px;
@@ -1231,9 +1239,9 @@
     <div class="hero-grid">
       <div class="hero-copy reveal">
         <div class="eyebrow"><span></span> Surat based jewellery startup</div>
-        <h1>Jewellery for the <span class="gold-text">quietly bold.</span></h1>
+        <h1>Jewellery in soft <span class="gold-text">pastel elegance.</span></h1>
         <p>
-          Seramore Jewels creates refined jewellery pieces for modern Indian women — elegant enough for every day, memorable enough for every occasion.
+          Seramore Jewels creates refined jewellery pieces with a soft, graceful visual language — pastel, polished, and memorable without feeling loud.
         </p>
         <div class="hero-actions">
           <a href="#products" class="btn btn-primary">View Jewellery Work →</a>
@@ -1357,7 +1365,7 @@
       <div class="section-head reveal">
         <div>
           <div class="section-kicker">Jewellery Showcase</div>
-          <h2 class="section-title">A curated showcase of Seramore’s jewellery work.</h2>
+          <h2 class="section-title">A pastel-toned showcase of Seramore’s jewellery work.</h2>
         </div>
         <p class="section-text">
           This is not an online product page. It is a refined visual portfolio created to help visitors understand Seramore’s design style before contacting the brand directly.
@@ -1408,17 +1416,29 @@
               <h3>Serene Chain</h3>
               <p>A minimal necklace concept displayed for appointments, previews and custom inquiries.</p>
               </div>
-          </article>     <div class="product-image"><img src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=900&q=85" alt="Pearl Whisper Studs"></div>
-            <div class="product-content">
-              <small>Earrings</small>
-              <h3>Pearl Whisper Studs</h3>
-              <p>Classic minimal studs presented to show the brand’s graceful design language.</p>
-              </div>
           </article>
         </div>
       </div>
     </div>
-  </sectiosetup creates trust first and redirects serious buyers to direct conversation.
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="parallax-banner reveal" id="banner">
+        <h2>Soft colours. Fine details. Jewellery that feels personal.</h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-kicker">How it works</div>
+          <h2 class="section-title">Simple inquiry flow for a young brand.</h2>
+        </div>
+        <p class="section-text">
+          Since the company does not want ecommerce yet, this setup creates trust first and redirects serious buyers to direct conversation.
         </p>
       </div>
 
