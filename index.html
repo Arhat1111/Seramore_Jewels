@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Seramore Jewels | Fine Jewellery, Surat</title>
-  <meta name="description" content="Seramore Jewels is a Surat-based jewellery startup crafting elegant, minimal and timeless jewellery collections." />
+  <meta name="description" content="Seramore Jewels is a Surat-based jewellery brand creating refined, elegant and timeless jewellery pieces." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,28 +12,33 @@
 
   <style>
     :root {
-      --bg: #fcf7f5;
-      --bg-soft: #f4ece7;
-      --text: #2f2925;
-      --muted: #867971;
-      --gold: #bfa46f;
-      --gold-soft: #e8d8b8;
-      --ivory: #fffdf9;
-      --brown: #a59b8a;
-      --taupe: #b9b09e;
-      --blush: #f7e5ea;
-      --rose: #d7b4bf;
-      --rose-deep: #c98fa4;
-      --pink-pop: #d7b4bf;
-      --pink-cream: #fbf0f3;
-      --linen: #e8dfd0;
-      --sage: #a9ad94;
-      --sky: #cdd8e4;
-      --butter: #efe4ba;
-      --mauve: #c9aeb8;
-      --stone: #b8b09f;
-      --line: rgba(91, 78, 69, 0.13);
-      --shadow: 0 24px 70px rgba(137, 118, 102, 0.16);
+      --bg: #fff9e8;
+      --bg-soft: #f7f1dc;
+      --text: #252b3b;
+      --muted: #6f716f;
+
+      --brand-blue: #5b73ae;
+      --brand-blue-dark: #445b93;
+      --brand-blue-soft: #dce5f6;
+
+      --ivory: #fffdf6;
+      --cream: #fff9e8;
+      --linen: #efe7cf;
+      --champagne: #e8d9b1;
+      --stone: #bcb39f;
+      --taupe: #9e9788;
+
+      --gold: #c9ab73;
+      --gold-soft: #eadbb6;
+
+      --blush: #f4e4e8;
+      --sage: #afb493;
+      --sky: #d7e0ef;
+      --butter: #efe4ad;
+
+      --line: rgba(91, 115, 174, 0.14);
+      --shadow: 0 24px 70px rgba(91, 115, 174, 0.14);
+
       --radius-xl: 34px;
       --radius-md: 20px;
       --ease: cubic-bezier(.16, 1, .3, 1);
@@ -71,7 +76,7 @@
       position: fixed;
       inset: 0;
       z-index: 999;
-      opacity: 0.08;
+      opacity: 0.06;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
     }
 
@@ -82,10 +87,10 @@
       border-radius: 50%;
       pointer-events: none;
       z-index: 1;
-      background: radial-gradient(circle, rgba(215,180,191,.28), transparent 65%);
+      background: radial-gradient(circle, rgba(91, 115, 174, .18), transparent 65%);
       transform: translate(-50%, -50%);
       filter: blur(6px);
-      opacity: 0.7;
+      opacity: 0.75;
     }
 
     .navbar {
@@ -94,24 +99,24 @@
       left: 50%;
       transform: translateX(-50%);
       width: min(1120px, calc(100% - 28px));
-      height: 72px;
+      height: 76px;
       z-index: 50;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 22px;
-      border: 1px solid rgba(255,255,255,.65);
-      background: rgba(255, 253, 249, 0.84);
+      border: 1px solid rgba(91,115,174,.14);
+      background: rgba(255, 249, 232, 0.86);
       backdrop-filter: blur(22px);
-      box-shadow: 0 20px 60px rgba(137, 118, 102, .13);
+      box-shadow: 0 20px 60px rgba(91,115,174,.10);
       border-radius: 999px;
       transition: .35s var(--ease);
     }
 
     .navbar.scrolled {
-      height: 64px;
-      background: rgba(255, 253, 249, .95);
-      box-shadow: 0 18px 50px rgba(137, 118, 102, .17);
+      height: 66px;
+      background: rgba(255, 249, 232, 0.96);
+      box-shadow: 0 18px 50px rgba(91,115,174,.14);
     }
 
     .logo {
@@ -119,22 +124,36 @@
       align-items: center;
       gap: 12px;
       font-weight: 800;
-      letter-spacing: .08em;
+      letter-spacing: .17em;
       text-transform: uppercase;
-      font-size: 14px;
+      font-size: 13px;
+      color: var(--brand-blue);
+      white-space: nowrap;
     }
 
     .logo-mark {
-      width: 40px;
-      height: 40px;
+      width: 54px;
+      height: 54px;
       border-radius: 50%;
+      overflow: hidden;
       display: grid;
       place-items: center;
-      color: var(--ivory);
-      background: radial-gradient(circle at 35% 25%, #fff6f8, #d7b4bf 48%, #a59b8a 100%);
-      box-shadow: 0 12px 24px rgba(191,164,111,.22);
-      font-family: "Playfair Display", serif;
-      font-size: 21px;
+      background: var(--cream);
+      border: 1px solid rgba(91,115,174,.14);
+      box-shadow: 0 12px 28px rgba(91,115,174,.14);
+      transition: .3s var(--ease);
+    }
+
+    .navbar.scrolled .logo-mark {
+      width: 48px;
+      height: 48px;
+    }
+
+    .logo-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transform: scale(1.05);
     }
 
     .nav-links {
@@ -143,11 +162,16 @@
       gap: 28px;
       color: var(--muted);
       font-size: 14px;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .nav-links a {
       position: relative;
+      transition: .3s var(--ease);
+    }
+
+    .nav-links a:hover {
+      color: var(--brand-blue);
     }
 
     .nav-links a::after {
@@ -157,7 +181,7 @@
       bottom: -7px;
       width: 0;
       height: 1px;
-      background: var(--gold);
+      background: var(--brand-blue);
       transition: .3s var(--ease);
     }
 
@@ -166,20 +190,21 @@
     }
 
     .nav-cta {
-      border: 1px solid var(--line);
-      background: var(--rose-deep);
+      border: 1px solid transparent;
+      background: var(--brand-blue);
       color: var(--ivory);
       padding: 13px 20px;
       border-radius: 999px;
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: .02em;
+      box-shadow: 0 18px 38px rgba(91,115,174,.22);
       transition: .3s var(--ease);
     }
 
     .nav-cta:hover {
       transform: translateY(-2px);
-      background: #b98095;
+      background: var(--brand-blue-dark);
     }
 
     .menu-btn {
@@ -188,7 +213,7 @@
       height: 44px;
       border: 0;
       border-radius: 50%;
-      background: var(--rose-deep);
+      background: var(--brand-blue);
       color: var(--ivory);
       cursor: pointer;
       font-size: 19px;
@@ -208,10 +233,10 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 75% 18%, rgba(247,229,234,.88), transparent 34%),
-        radial-gradient(circle at 18% 72%, rgba(232,223,208,.62), transparent 36%),
-        radial-gradient(circle at 52% 42%, rgba(205,216,228,.24), transparent 38%),
-        radial-gradient(circle at 86% 78%, rgba(169,173,148,.18), transparent 30%);
+        radial-gradient(circle at 75% 18%, rgba(220,229,246,.75), transparent 34%),
+        radial-gradient(circle at 18% 72%, rgba(232,217,177,.45), transparent 36%),
+        radial-gradient(circle at 52% 42%, rgba(244,228,232,.25), transparent 38%),
+        radial-gradient(circle at 86% 78%, rgba(175,180,147,.16), transparent 30%);
       z-index: 0;
     }
 
@@ -234,11 +259,11 @@
       padding: 9px 14px;
       border: 1px solid var(--line);
       border-radius: 999px;
-      color: var(--muted);
-      background: rgba(255,253,249,.62);
+      color: var(--brand-blue);
+      background: rgba(255,253,246,.75);
       backdrop-filter: blur(12px);
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 24px;
     }
 
@@ -246,8 +271,8 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: var(--gold);
-      box-shadow: 0 0 0 8px rgba(184,146,85,.15);
+      background: var(--brand-blue);
+      box-shadow: 0 0 0 8px rgba(91,115,174,.12);
     }
 
     .hero h1 {
@@ -259,12 +284,12 @@
     }
 
     .hero h1 .gold-text {
-      color: var(--rose-deep);
+      color: var(--brand-blue);
       font-style: italic;
     }
 
     .hero p {
-      max-width: 540px;
+      max-width: 560px;
       color: var(--muted);
       line-height: 1.8;
       margin-top: 26px;
@@ -295,18 +320,18 @@
 
     .btn-primary {
       color: var(--ivory);
-      background: var(--rose-deep);
-      box-shadow: 0 18px 38px rgba(216,163,182,.25);
+      background: var(--brand-blue);
+      box-shadow: 0 18px 38px rgba(91,115,174,.22);
     }
 
     .btn-primary:hover {
       transform: translateY(-4px);
-      background: #b98095;
+      background: var(--brand-blue-dark);
     }
 
     .btn-secondary {
       color: var(--text);
-      background: rgba(255,255,255,.6);
+      background: rgba(255,255,255,.55);
       border: 1px solid var(--line);
     }
 
@@ -328,8 +353,8 @@
       aspect-ratio: 3 / 4.25;
       border-radius: 44px;
       overflow: hidden;
-      background: linear-gradient(145deg, var(--pink-cream), var(--linen));
-      border: 1px solid rgba(255,255,255,.78);
+      background: linear-gradient(145deg, var(--ivory), var(--linen));
+      border: 1px solid rgba(91,115,174,.12);
       box-shadow: var(--shadow);
       transform: rotate(-4deg);
       transition: transform .4s var(--ease);
@@ -343,7 +368,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: saturate(.92) contrast(1.02);
+      filter: saturate(.9) contrast(1.03);
     }
 
     .floating-badge {
@@ -353,19 +378,19 @@
       width: 165px;
       height: 165px;
       border-radius: 50%;
-      background: rgba(255,253,249,.82);
+      background: rgba(255,253,246,.82);
       backdrop-filter: blur(18px);
-      border: 1px solid rgba(255,255,255,.8);
+      border: 1px solid rgba(91,115,174,.16);
       display: grid;
       place-items: center;
-      box-shadow: 0 18px 50px rgba(137,118,102,.14);
+      box-shadow: 0 18px 50px rgba(91,115,174,.13);
       animation: float 5s ease-in-out infinite;
     }
 
     .floating-badge strong {
       font-family: "Playfair Display", serif;
       font-size: 38px;
-      color: var(--gold);
+      color: var(--brand-blue);
       display: block;
       text-align: center;
     }
@@ -374,7 +399,7 @@
       display: block;
       text-align: center;
       color: var(--muted);
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: .08em;
       text-transform: uppercase;
       font-size: 10px;
@@ -387,7 +412,7 @@
       left: 0;
       width: 130px;
       height: 130px;
-      border: 1px solid rgba(184,146,85,.35);
+      border: 1px solid rgba(91,115,174,.28);
       border-radius: 50%;
       animation: rotate 14s linear infinite;
     }
@@ -399,9 +424,9 @@
       left: 13px;
       width: 18px;
       height: 18px;
-      background: var(--gold);
+      background: var(--brand-blue);
       border-radius: 50%;
-      box-shadow: 0 0 0 8px rgba(184,146,85,.14);
+      box-shadow: 0 0 0 8px rgba(91,115,174,.12);
     }
 
     @keyframes float {
@@ -432,7 +457,7 @@
     }
 
     .section-kicker {
-      color: var(--rose-deep);
+      color: var(--brand-blue);
       font-weight: 800;
       letter-spacing: .16em;
       text-transform: uppercase;
@@ -462,11 +487,11 @@
     }
 
     .about-card {
-      background: linear-gradient(145deg, rgba(255,253,249,.96), rgba(247,229,234,.42), rgba(232,223,208,.32));
+      background: linear-gradient(145deg, rgba(255,253,246,.96), rgba(220,229,246,.28), rgba(232,217,177,.22));
       border: 1px solid var(--line);
       border-radius: var(--radius-xl);
       padding: clamp(24px, 4vw, 44px);
-      box-shadow: 0 18px 50px rgba(137,118,102,.10);
+      box-shadow: 0 18px 50px rgba(91,115,174,.10);
     }
 
     .about-card h3 {
@@ -492,7 +517,7 @@
     .stat {
       padding: 18px;
       border-radius: 20px;
-      background: linear-gradient(145deg, var(--pink-cream), var(--linen));
+      background: linear-gradient(145deg, var(--ivory), var(--brand-blue-soft));
       border: 1px solid var(--line);
     }
 
@@ -500,13 +525,13 @@
       display: block;
       font-family: "Playfair Display", serif;
       font-size: 30px;
-      color: var(--rose-deep);
+      color: var(--brand-blue);
     }
 
     .stat span {
       color: var(--muted);
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: .08em;
       text-transform: uppercase;
     }
@@ -529,12 +554,12 @@
     .marquee {
       position: relative;
       overflow: hidden;
-      border-block: 1px solid rgba(137,118,102,.16);
-      background: #d7b4bf;
-      color: #fffdf9;
+      border-block: 1px solid rgba(91,115,174,.16);
+      background: var(--brand-blue);
+      color: #fffdf6;
       padding: 22px 0;
       white-space: nowrap;
-      box-shadow: 0 18px 45px rgba(137,118,102,.13);
+      box-shadow: 0 18px 45px rgba(91,115,174,.16);
     }
 
     .marquee-track {
@@ -544,11 +569,11 @@
       padding-left: 40px;
       font-family: "Playfair Display", serif;
       font-size: clamp(28px, 4vw, 56px);
-      text-shadow: 0 8px 24px rgba(91,78,69,.16);
+      text-shadow: 0 8px 24px rgba(37,43,59,.18);
     }
 
     .marquee-track span {
-      color: rgba(255,255,255,.9);
+      color: rgba(255,255,255,.92);
       font-style: italic;
     }
 
@@ -557,84 +582,12 @@
       to { transform: translateX(-50%); }
     }
 
-    .collection-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .collection-card {
-      position: relative;
-      overflow: hidden;
-      min-height: 360px;
-      border-radius: 30px;
-      background: var(--ivory);
-      border: 1px solid var(--line);
-      box-shadow: 0 20px 60px rgba(50,30,19,.08);
-      isolation: isolate;
-      cursor: pointer;
-      transform-style: preserve-3d;
-      transition: .45s var(--ease);
-    }
-
-    .collection-card:nth-child(2),
-    .collection-card:nth-child(4) {
-      margin-top: 46px;
-    }
-
-    .collection-card:hover {
-      transform: translateY(-12px) rotateX(2deg) rotateY(-2deg);
-      box-shadow: 0 24px 70px rgba(220,143,176,.22);
-    }
-
-    .collection-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      inset: 0;
-      z-index: -2;
-      transition: .7s var(--ease);
-    }
-
-    .collection-card:hover img {
-      transform: scale(1.08);
-    }
-
-    .collection-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(20,12,9,.72), transparent 55%);
-      z-index: -1;
-    }
-
-    .collection-info {
-      position: absolute;
-      left: 22px;
-      right: 22px;
-      bottom: 22px;
-      color: var(--ivory);
-    }
-
-    .collection-info h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 28px;
-      margin-bottom: 7px;
-    }
-
-    .collection-info p {
-      color: rgba(255,255,255,.78);
-      font-size: 13px;
-      line-height: 1.6;
-    }
-
     .products-wrap {
-      background: linear-gradient(145deg, rgba(255,253,249,.96), rgba(247,229,234,.48), rgba(232,223,208,.38));
+      background: linear-gradient(145deg, rgba(255,253,246,.96), rgba(220,229,246,.30), rgba(232,217,177,.22));
       border: 1px solid var(--line);
       border-radius: 42px;
       padding: clamp(18px, 3vw, 34px);
-      box-shadow: 0 20px 70px rgba(137,118,102,.11);
+      box-shadow: 0 20px 70px rgba(91,115,174,.10);
     }
 
     .showcase-mosaic {
@@ -646,7 +599,7 @@
       border-radius: 34px;
       background: var(--ivory);
       border: 1px solid var(--line);
-      box-shadow: 0 24px 70px rgba(137,118,102,.13);
+      box-shadow: 0 24px 70px rgba(91,115,174,.10);
     }
 
     .mosaic-tile {
@@ -661,7 +614,7 @@
       height: 100%;
       object-fit: cover;
       transition: transform .8s var(--ease), filter .8s var(--ease);
-      filter: saturate(.9) contrast(.97);
+      filter: saturate(.9) contrast(.98);
     }
 
     .mosaic-tile:hover img {
@@ -672,10 +625,10 @@
     .tile-label {
       position: absolute;
       z-index: 2;
-      color: #fffdf9;
+      color: #fffdf6;
       font-weight: 600;
       letter-spacing: -.02em;
-      text-shadow: 0 10px 28px rgba(40,30,26,.28);
+      text-shadow: 0 10px 28px rgba(37,43,59,.32);
     }
 
     .tile-label.large {
@@ -689,24 +642,19 @@
     .tile-label.small {
       font-size: 14px;
       font-style: italic;
-      color: rgba(255,253,249,.92);
+      color: rgba(255,253,246,.94);
     }
 
-    .tile-label.dark {
-      color: rgba(47,41,37,.78);
-      text-shadow: none;
-    }
-
-    .tile-duo { grid-column: span 5; grid-row: span 2; background: #b9b09e; }
-    .tile-linen { grid-column: span 7; grid-row: span 2; background: #b9b09e; }
-    .tile-sunset { grid-column: span 7; grid-row: span 2; background: linear-gradient(135deg, #f4a992, #f3c6a0); }
-    .tile-charm { grid-column: span 5; grid-row: span 2; background: #e9b197; }
-    .tile-huggies { grid-column: span 4; grid-row: span 2; background: #e9e2b6; }
-    .tile-butter { grid-column: span 8; grid-row: span 2; background: #efe4ba; }
-    .tile-leaf { grid-column: span 7; grid-row: span 2; background: #7f8d55; }
-    .tile-peridot { grid-column: span 5; grid-row: span 2; background: #818c5a; }
-    .tile-sky { grid-column: span 5; grid-row: span 2; background: #7890ad; }
-    .tile-deep { grid-column: span 7; grid-row: span 2; background: #7e94b4; }
+    .tile-duo { grid-column: span 5; grid-row: span 2; background: var(--stone); }
+    .tile-linen { grid-column: span 7; grid-row: span 2; background: var(--linen); }
+    .tile-sunset { grid-column: span 7; grid-row: span 2; background: linear-gradient(135deg, #d9b4c0, #e8d9b1); }
+    .tile-charm { grid-column: span 5; grid-row: span 2; background: var(--champagne); }
+    .tile-huggies { grid-column: span 4; grid-row: span 2; background: var(--butter); }
+    .tile-butter { grid-column: span 8; grid-row: span 2; background: var(--gold-soft); }
+    .tile-leaf { grid-column: span 7; grid-row: span 2; background: var(--sage); }
+    .tile-peridot { grid-column: span 5; grid-row: span 2; background: #8d9566; }
+    .tile-sky { grid-column: span 5; grid-row: span 2; background: var(--brand-blue); }
+    .tile-deep { grid-column: span 7; grid-row: span 2; background: var(--brand-blue-dark); }
 
     .tile-duo .tile-label { left: 10%; bottom: 17%; }
     .tile-linen .tile-label { right: 10%; top: 18%; }
@@ -724,11 +672,245 @@
       position: absolute;
       inset: 0;
       z-index: 1;
-      background: linear-gradient(to top, rgba(42,30,25,.18), transparent 56%);
+      background: linear-gradient(to top, rgba(37,43,59,.22), transparent 56%);
       pointer-events: none;
     }
 
-    
+    .jewellery-gallery {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 20px;
+      align-items: stretch;
+      background: linear-gradient(145deg, rgba(255,253,246,.96), rgba(220,229,246,.28), rgba(232,217,177,.22));
+      border: 1px solid var(--line);
+      border-radius: 38px;
+      padding: clamp(16px, 3vw, 28px);
+      box-shadow: 0 24px 70px rgba(91,115,174,.10);
+      overflow: hidden;
+    }
+
+    .gallery-feature {
+      position: relative;
+      min-height: 620px;
+      border-radius: 30px;
+      overflow: hidden;
+      background: var(--linen);
+      isolation: isolate;
+    }
+
+    .gallery-feature img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+      transition: transform .8s var(--ease), opacity .45s var(--ease);
+    }
+
+    .gallery-feature:hover img {
+      transform: scale(1.04);
+    }
+
+    .gallery-feature::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(37,43,59,.52), rgba(37,43,59,.05) 58%);
+      z-index: 1;
+    }
+
+    .gallery-feature-content {
+      position: absolute;
+      left: clamp(22px, 4vw, 42px);
+      right: clamp(22px, 4vw, 42px);
+      bottom: clamp(22px, 4vw, 42px);
+      z-index: 2;
+      color: var(--ivory);
+    }
+
+    .gallery-feature-content small {
+      display: inline-flex;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: rgba(255,253,246,.18);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,.22);
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: 11px;
+      margin-bottom: 15px;
+    }
+
+    .gallery-feature-content h3 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(38px, 5vw, 74px);
+      line-height: .9;
+      letter-spacing: -.05em;
+      max-width: 540px;
+      margin-bottom: 14px;
+    }
+
+    .gallery-feature-content p {
+      max-width: 500px;
+      color: rgba(255,253,246,.84);
+      line-height: 1.7;
+    }
+
+    .gallery-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    .gallery-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 8px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,253,246,.62);
+    }
+
+    .gallery-chip {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: .3s var(--ease);
+    }
+
+    .gallery-chip.active,
+    .gallery-chip:hover {
+      background: var(--brand-blue);
+      color: var(--ivory);
+    }
+
+    .gallery-slider-shell {
+      position: relative;
+      flex: 1;
+      min-height: 460px;
+      border-radius: 30px;
+      overflow: hidden;
+      background: rgba(255,253,246,.58);
+      border: 1px solid var(--line);
+      padding: 16px;
+    }
+
+    .gallery-track {
+      height: 100%;
+      display: grid;
+      gap: 14px;
+      overflow-y: auto;
+      padding-right: 6px;
+      scroll-behavior: smooth;
+    }
+
+    .gallery-track::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .gallery-track::-webkit-scrollbar-thumb {
+      background: var(--brand-blue-soft);
+      border-radius: 999px;
+    }
+
+    .gallery-thumb {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 14px;
+      align-items: center;
+      padding: 10px;
+      border-radius: 24px;
+      border: 1px solid transparent;
+      background: rgba(255,253,246,.62);
+      cursor: pointer;
+      text-align: left;
+      transition: .3s var(--ease);
+    }
+
+    .gallery-thumb.active,
+    .gallery-thumb:hover {
+      border-color: rgba(91,115,174,.30);
+      background: rgba(220,229,246,.42);
+      transform: translateX(-4px);
+      box-shadow: 0 14px 36px rgba(91,115,174,.10);
+    }
+
+    .gallery-thumb img {
+      width: 120px;
+      height: 105px;
+      object-fit: cover;
+      border-radius: 18px;
+    }
+
+    .gallery-thumb small {
+      color: var(--brand-blue);
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: 10px;
+    }
+
+    .gallery-thumb h4 {
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+      color: var(--text);
+      margin: 5px 0;
+      letter-spacing: -.03em;
+    }
+
+    .gallery-thumb p {
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 13px;
+    }
+
+    .gallery-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 14px 4px 0;
+    }
+
+    .gallery-arrow-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    .gallery-arrow {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: var(--ivory);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 20px;
+      transition: .3s var(--ease);
+    }
+
+    .gallery-arrow:hover {
+      background: var(--brand-blue);
+      color: var(--ivory);
+      transform: translateY(-2px);
+    }
+
+    .gallery-counter {
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
     .parallax-banner {
       min-height: 520px;
       border-radius: 44px;
@@ -746,7 +928,7 @@
       content: "";
       position: absolute;
       inset: -18%;
-      background-image: linear-gradient(rgba(165,155,138,.22), rgba(121,96,84,.42)), url("https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1800&q=85");
+      background-image: linear-gradient(rgba(91,115,174,.20), rgba(37,43,59,.45)), url("https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1800&q=85");
       background-size: cover;
       background-position: center;
       transform: translateY(var(--bannerY, 0px)) scale(1.1);
@@ -769,7 +951,7 @@
     }
 
     .process-card {
-      background: linear-gradient(145deg, rgba(255,253,249,.96), rgba(247,229,234,.38), rgba(232,223,208,.32));
+      background: linear-gradient(145deg, rgba(255,253,246,.96), rgba(220,229,246,.26), rgba(232,217,177,.20));
       border: 1px solid var(--line);
       border-radius: 28px;
       padding: 26px;
@@ -779,7 +961,7 @@
 
     .process-card:hover {
       transform: translateY(-9px);
-      box-shadow: 0 22px 60px rgba(50,30,19,.08);
+      box-shadow: 0 22px 60px rgba(91,115,174,.12);
     }
 
     .process-card span {
@@ -788,8 +970,8 @@
       border-radius: 50%;
       display: grid;
       place-items: center;
-      background: var(--pink-cream);
-      color: var(--rose-deep);
+      background: var(--brand-blue-soft);
+      color: var(--brand-blue);
       font-weight: 900;
       margin-bottom: 26px;
     }
@@ -807,7 +989,7 @@
     }
 
     .instagram-section {
-      background: linear-gradient(145deg, #a59b8a, #d7b4bf 48%, #fbf0f3);
+      background: linear-gradient(145deg, var(--brand-blue-dark), var(--brand-blue) 52%, var(--cream));
       color: var(--ivory);
       border-radius: 46px 46px 0 0;
       margin-top: 60px;
@@ -816,7 +998,7 @@
 
     .instagram-section .section-text,
     .instagram-section .section-kicker {
-      color: rgba(255,255,255,.7);
+      color: rgba(255,255,255,.72);
     }
 
     .instagram-section .section-title {
@@ -835,11 +1017,12 @@
       overflow: hidden;
       aspect-ratio: 4 / 5;
       background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.11);
+      border: 1px solid rgba(255,255,255,.14);
       cursor: pointer;
     }
 
-    .feed-card img, .feed-card video {
+    .feed-card img,
+    .feed-card video {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -860,6 +1043,7 @@
       font-size: 42px;
       opacity: 0;
       transition: .3s var(--ease);
+      color: var(--ivory);
     }
 
     .feed-card:hover .play-icon {
@@ -867,7 +1051,7 @@
     }
 
     .instagram-note {
-      color: rgba(255,255,255,.62);
+      color: rgba(255,255,255,.68);
       line-height: 1.7;
       font-size: 13px;
       margin-top: 20px;
@@ -883,11 +1067,11 @@
 
     .contact-card,
     .contact-form {
-      background: linear-gradient(145deg, rgba(255,253,249,.96), rgba(247,229,234,.40), rgba(232,223,208,.34));
+      background: linear-gradient(145deg, rgba(255,253,246,.96), rgba(220,229,246,.28), rgba(232,217,177,.22));
       border: 1px solid var(--line);
       border-radius: 34px;
       padding: clamp(24px, 4vw, 40px);
-      box-shadow: 0 20px 70px rgba(137,118,102,.11);
+      box-shadow: 0 20px 70px rgba(91,115,174,.10);
     }
 
     .contact-card h3 {
@@ -916,7 +1100,13 @@
       border: 1px solid var(--line);
       border-radius: 20px;
       color: var(--muted);
-      background: rgba(255,253,249,.72);
+      background: rgba(255,253,246,.72);
+      transition: .3s var(--ease);
+    }
+
+    .contact-list a:hover {
+      color: var(--brand-blue);
+      transform: translateX(4px);
     }
 
     .form-row {
@@ -929,10 +1119,12 @@
       margin-bottom: 14px;
     }
 
-    input, textarea, select {
+    input,
+    textarea,
+    select {
       width: 100%;
       border: 1px solid var(--line);
-      background: rgba(255,253,249,.86);
+      background: rgba(255,253,246,.88);
       padding: 16px 17px;
       border-radius: 18px;
       font-family: inherit;
@@ -946,9 +1138,11 @@
       resize: vertical;
     }
 
-    input:focus, textarea:focus, select:focus {
-      border-color: rgba(201,143,164,.68);
-      box-shadow: 0 0 0 4px rgba(215,180,191,.18);
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: rgba(91,115,174,.55);
+      box-shadow: 0 0 0 4px rgba(91,115,174,.12);
     }
 
     .footer {
@@ -973,88 +1167,9 @@
       transform: translateY(0);
     }
 
-    .modal {
-      position: fixed;
-      inset: 0;
-      z-index: 100;
-      display: none;
-      place-items: center;
-      padding: 20px;
-      background: rgba(20,12,9,.55);
-      backdrop-filter: blur(14px);
-    }
-
-    .modal.active {
-      display: grid;
-    }
-
-    .modal-box {
-      width: min(760px, 100%);
-      background: var(--ivory);
-      border-radius: 34px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      display: grid;
-      grid-template-columns: .95fr 1.05fr;
-      position: relative;
-      animation: pop .4s var(--ease);
-    }
-
-    @keyframes pop {
-      from { opacity: 0; transform: translateY(25px) scale(.96); }
-      to { opacity: 1; transform: translateY(0) scale(1); }
-    }
-
-    .modal-image {
-      min-height: 420px;
-      background: var(--bg-soft);
-    }
-
-    .modal-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .modal-content {
-      padding: 34px;
-    }
-
-    .modal-content small {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: .14em;
-      font-weight: 900;
-    }
-
-    .modal-content h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 38px;
-      margin: 10px 0 14px;
-    }
-
-    .modal-content p {
-      color: var(--muted);
-      line-height: 1.85;
-      margin-bottom: 22px;
-    }
-
-    .close-modal {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      width: 40px;
-      height: 40px;
-      border: 0;
-      border-radius: 50%;
-      background: rgba(255,255,255,.85);
-      cursor: pointer;
-      font-size: 20px;
-      z-index: 2;
-    }
-
     @media (max-width: 980px) {
-      .nav-links, .nav-cta {
+      .nav-links,
+      .nav-cta {
         display: none;
       }
 
@@ -1083,7 +1198,8 @@
 
       .hero-grid,
       .about-grid,
-      .contact-grid {
+      .contact-grid,
+      .jewellery-gallery {
         grid-template-columns: 1fr;
       }
 
@@ -1091,7 +1207,6 @@
         min-height: 540px;
       }
 
-      .collection-grid,
       .process-grid,
       .feed-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1101,13 +1216,17 @@
         grid-auto-rows: 120px;
       }
 
-      .tile-label.large {
-        font-size: clamp(32px, 7vw, 56px);
+      .gallery-feature {
+        min-height: 520px;
       }
 
-      .collection-card:nth-child(2),
-      .collection-card:nth-child(4) {
-        margin-top: 0;
+      .gallery-slider-shell {
+        min-height: 0;
+        max-height: 520px;
+      }
+
+      .tile-label.large {
+        font-size: clamp(32px, 7vw, 56px);
       }
 
       .section-head {
@@ -1131,12 +1250,18 @@
       }
 
       .logo {
-        font-size: 12px;
+        font-size: 11px;
+        letter-spacing: .12em;
       }
 
       .logo-mark {
-        width: 36px;
-        height: 36px;
+        width: 40px;
+        height: 40px;
+      }
+
+      .navbar.scrolled .logo-mark {
+        width: 38px;
+        height: 38px;
       }
 
       .hero {
@@ -1187,7 +1312,6 @@
       }
 
       .stats,
-      .collection-grid,
       .process-grid,
       .feed-grid,
       .form-row {
@@ -1197,6 +1321,7 @@
       .showcase-mosaic {
         grid-template-columns: 1fr;
         grid-auto-rows: 230px;
+        border-radius: 26px;
       }
 
       .mosaic-tile {
@@ -1204,8 +1329,26 @@
         grid-row: span 1 !important;
       }
 
-      .showcase-mosaic {
-        border-radius: 26px;
+      .gallery-feature {
+        min-height: 430px;
+        border-radius: 24px;
+      }
+
+      .gallery-slider-shell {
+        border-radius: 24px;
+      }
+
+      .gallery-thumb {
+        grid-template-columns: 92px 1fr;
+      }
+
+      .gallery-thumb img {
+        width: 92px;
+        height: 88px;
+      }
+
+      .gallery-chip-row {
+        border-radius: 24px;
       }
 
       .parallax-banner {
@@ -1217,36 +1360,29 @@
         border-radius: 30px 30px 0 0;
       }
 
-      .modal-box {
-        grid-template-columns: 1fr;
-        max-height: 92vh;
-        overflow-y: auto;
-      }
-
-      .modal-image {
-        min-height: 280px;
-      }
-
       .footer {
         padding: 28px 18px;
       }
     }
   </style>
 </head>
+
 <body>
   <div class="grain"></div>
   <div class="cursor-glow" id="cursorGlow"></div>
 
   <nav class="navbar" id="navbar">
     <a href="#home" class="logo" aria-label="Seramore Jewels home">
-      <span class="logo-mark">S</span>
+      <span class="logo-mark">
+        <img src="IMG_3119.PNG" alt="Seramore Jewels logo">
+      </span>
       <span>Seramore Jewels</span>
     </a>
 
     <div class="nav-links">
       <a href="#about">About</a>
-      <a href="#gallery">Gallery</a>
       <a href="#products">Showcase</a>
+      <a href="#gallery">Gallery</a>
       <a href="#instagram">Reels</a>
       <a href="#contact">Contact</a>
     </div>
@@ -1259,9 +1395,10 @@
     <div class="hero-grid">
       <div class="hero-copy reveal">
         <div class="eyebrow"><span></span> Surat based jewellery startup</div>
-        <h1>Jewellery in soft <span class="gold-text">pastel elegance.</span></h1>
+        <h1>Jewellery with <span class="gold-text">signature elegance.</span></h1>
         <p>
-          Seramore Jewels creates refined jewellery pieces with a soft, graceful visual language — pastel, polished, and memorable without feeling loud.
+          Seramore Jewels creates refined jewellery pieces with a graceful identity —
+          warm cream, signature blue, polished details, and a premium yet personal feel.
         </p>
         <div class="hero-actions">
           <a href="#products" class="btn btn-primary">View Jewellery Work →</a>
@@ -1271,7 +1408,7 @@
 
       <div class="hero-card-wrap reveal">
         <div class="ring-orbit"></div>
-        <div class="hero-card parallax-card">
+        <div class="hero-card">
           <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1200&q=85" alt="Elegant diamond ring" />
         </div>
         <div class="floating-badge">
@@ -1303,8 +1440,9 @@
             The brand direction is simple: make jewellery that looks premium, feels personal, and can be worn across weddings, family functions, gifting moments, and everyday styling.
           </p>
           <p>
-            As a startup, the website is built for brand presence first — showcasing products, collections, Instagram reels, and inquiries without online selling for now.
+            As a startup, the website is built for brand presence first — showcasing jewellery work, Instagram reels, and direct inquiries without online selling for now.
           </p>
+
           <div class="stats">
             <div class="stat">
               <strong>01</strong>
@@ -1312,7 +1450,7 @@
             </div>
             <div class="stat">
               <strong>04</strong>
-              <span>Collections</span>
+              <span>Mood Stories</span>
             </div>
             <div class="stat">
               <strong>100%</strong>
@@ -1330,8 +1468,8 @@
 
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
-      <div>Fine Jewellery <span>•</span> Minimal Luxury <span>•</span> Surat Craft <span>•</span> Everyday Elegance <span>•</span></div>
-      <div>Fine Jewellery <span>•</span> Minimal Luxury <span>•</span> Surat Craft <span>•</span> Everyday Elegance <span>•</span></div>
+      <div>Fine Jewellery <span>•</span> Signature Blue <span>•</span> Surat Craft <span>•</span> Everyday Elegance <span>•</span></div>
+      <div>Fine Jewellery <span>•</span> Signature Blue <span>•</span> Surat Craft <span>•</span> Everyday Elegance <span>•</span></div>
     </div>
   </div>
 
@@ -1340,7 +1478,7 @@
       <div class="section-head reveal">
         <div>
           <div class="section-kicker">Jewellery Showcase</div>
-          <h2 class="section-title">A pastel-toned showcase of Seramore’s jewellery work.</h2>
+          <h2 class="section-title">An editorial showcase of Seramore’s jewellery work.</h2>
         </div>
         <p class="section-text">
           This is not an online product page. It is a refined visual portfolio created to help visitors understand Seramore’s design style before contacting the brand directly.
@@ -1360,7 +1498,7 @@
           </div>
 
           <div class="mosaic-tile tile-sunset">
-            <div class="tile-label large">Sunset<br>Air</div>
+            <div class="tile-label large">Champagne<br>Glow</div>
           </div>
 
           <div class="mosaic-tile tile-charm mosaic-overlay">
@@ -1375,12 +1513,12 @@
 
           <div class="mosaic-tile tile-butter mosaic-overlay">
             <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1100&q=85" alt="Butter Yellow charms">
-            <div class="tile-label large">Butter<br>Yellow</div>
+            <div class="tile-label large">Soft<br>Gold</div>
           </div>
 
           <div class="mosaic-tile tile-leaf mosaic-overlay">
             <img src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1100&q=85" alt="Leaf Green jewellery mood">
-            <div class="tile-label large">Leaf<br>Green</div>
+            <div class="tile-label large">Stone<br>Calm</div>
           </div>
 
           <div class="mosaic-tile tile-peridot mosaic-overlay">
@@ -1390,12 +1528,12 @@
 
           <div class="mosaic-tile tile-sky mosaic-overlay">
             <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=900&q=85" alt="North Star Birthstone Signet Necklace">
-            <div class="tile-label small">North Star Birthstone Signet Necklace</div>
+            <div class="tile-label small">North Star Birthstone Necklace</div>
           </div>
 
           <div class="mosaic-tile tile-deep mosaic-overlay">
             <img src="https://images.unsplash.com/photo-1599459182681-c938b7f697d4?auto=format&fit=crop&w=1100&q=85" alt="Deep Sky jewellery styling">
-            <div class="tile-label large">Deep<br>Sky</div>
+            <div class="tile-label large">Deep<br>Blue</div>
           </div>
         </div>
       </div>
@@ -1407,42 +1545,88 @@
       <div class="section-head reveal">
         <div>
           <div class="section-kicker">Gallery</div>
-          <h2 class="section-title">A visual gallery of Seramore’s jewellery mood and craft.</h2>
+          <h2 class="section-title">An interactive jewellery gallery with a refined editorial feel.</h2>
         </div>
         <p class="section-text">
-          This gallery can be used to display photoshoots, close-up jewellery details, client styling, packaging moments, and brand visuals.
+          Browse Seramore’s visual world through styling moments, close details, craft shots, and soft brand imagery.
         </p>
       </div>
 
-      <div class="collection-grid">
-        <article class="collection-card reveal">
-          <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=900&q=85" alt="Jewellery close-up gallery image" />
-          <div class="collection-info">
-            <h3>Close Details</h3>
-            <p>Macro jewellery shots showing polish, texture and finishing.</p>
+      <div class="jewellery-gallery reveal">
+        <div class="gallery-feature" id="galleryFeature">
+          <img id="galleryFeatureImage" src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=1200&q=85" alt="Jewellery close detail">
+          <div class="gallery-feature-content">
+            <small id="galleryFeatureCategory">Close Details</small>
+            <h3 id="galleryFeatureTitle">Details that feel delicate.</h3>
+            <p id="galleryFeatureText">A refined close-up mood made for showing polish, stone setting and the graceful finishing of each piece.</p>
           </div>
-        </article>
-        <article class="collection-card reveal">
-          <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=85" alt="Earrings styling gallery image" />
-          <div class="collection-info">
-            <h3>Styling</h3>
-            <p>Editorial visuals showing how the pieces feel when worn.</p>
+        </div>
+
+        <div class="gallery-panel">
+          <div class="gallery-chip-row" id="galleryChips">
+            <button class="gallery-chip active" data-filter="all">All</button>
+            <button class="gallery-chip" data-filter="details">Details</button>
+            <button class="gallery-chip" data-filter="styling">Styling</button>
+            <button class="gallery-chip" data-filter="craft">Craft</button>
           </div>
-        </article>
-        <article class="collection-card reveal">
-          <img src="https://images.unsplash.com/photo-1615655114865-4cc1bda5901d?auto=format&fit=crop&w=900&q=85" alt="Bracelet gallery image" />
-          <div class="collection-info">
-            <h3>Craft</h3>
-            <p>Elegant visuals that communicate making, material and quality.</p>
+
+          <div class="gallery-slider-shell">
+            <div class="gallery-track" id="galleryTrack">
+              <button class="gallery-thumb active" data-category="details" data-title="Details that feel delicate." data-label="Close Details" data-text="A refined close-up mood made for showing polish, stone setting and the graceful finishing of each piece." data-image="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=1200&q=85">
+                <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=500&q=85" alt="Jewellery close detail">
+                <div>
+                  <small>Details</small>
+                  <h4>Close Details</h4>
+                  <p>Macro visuals for shine, stones and finishing.</p>
+                </div>
+              </button>
+
+              <button class="gallery-thumb" data-category="styling" data-title="Soft styling, worn with ease." data-label="Styling" data-text="Elegant wearable imagery that helps visitors imagine how the jewellery looks in daily styling and special moments." data-image="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=1200&q=85">
+                <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=500&q=85" alt="Jewellery styling">
+                <div>
+                  <small>Styling</small>
+                  <h4>Worn Moments</h4>
+                  <p>Editorial images showing the jewellery when worn.</p>
+                </div>
+              </button>
+
+              <button class="gallery-thumb" data-category="craft" data-title="A premium feel in every frame." data-label="Craft" data-text="Use this space for workshop, packaging, material, and making visuals that communicate quality and trust." data-image="https://images.unsplash.com/photo-1615655114865-4cc1bda5901d?auto=format&fit=crop&w=1200&q=85">
+                <img src="https://images.unsplash.com/photo-1615655114865-4cc1bda5901d?auto=format&fit=crop&w=500&q=85" alt="Jewellery craft">
+                <div>
+                  <small>Craft</small>
+                  <h4>Making & Finish</h4>
+                  <p>Craft, texture and material-focused visuals.</p>
+                </div>
+              </button>
+
+              <button class="gallery-thumb" data-category="styling" data-title="A graceful jewellery mood." data-label="Brand Mood" data-text="Soft lifestyle photography for gifting, occasions, previews and the emotional side of the brand." data-image="https://images.unsplash.com/photo-1599459182681-c938b7f697d4?auto=format&fit=crop&w=1200&q=85">
+                <img src="https://images.unsplash.com/photo-1599459182681-c938b7f697d4?auto=format&fit=crop&w=500&q=85" alt="Jewellery mood">
+                <div>
+                  <small>Mood</small>
+                  <h4>Brand Story</h4>
+                  <p>Visual moments that build the Seramore feeling.</p>
+                </div>
+              </button>
+
+              <button class="gallery-thumb" data-category="details" data-title="Minimal jewellery, softly framed." data-label="Product Mood" data-text="Clean visuals that present jewellery without turning the website into a shopping catalogue." data-image="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1200&q=85">
+                <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=500&q=85" alt="Ring product mood">
+                <div>
+                  <small>Details</small>
+                  <h4>Ring Mood</h4>
+                  <p>Simple jewellery presentation for brand discovery.</p>
+                </div>
+              </button>
+            </div>
           </div>
-        </article>
-        <article class="collection-card reveal">
-          <img src="https://images.unsplash.com/photo-1599459182681-c938b7f697d4?auto=format&fit=crop&w=900&q=85" alt="Necklace styling gallery image" />
-          <div class="collection-info">
-            <h3>Moments</h3>
-            <p>Soft lifestyle images for gifting, occasions and previews.</p>
+
+          <div class="gallery-controls">
+            <div class="gallery-counter" id="galleryCounter">01 / 05</div>
+            <div class="gallery-arrow-group">
+              <button class="gallery-arrow" id="galleryPrev" aria-label="Previous gallery image">‹</button>
+              <button class="gallery-arrow" id="galleryNext" aria-label="Next gallery image">›</button>
+            </div>
           </div>
-        </article>
+        </div>
       </div>
     </div>
   </section>
@@ -1450,7 +1634,7 @@
   <section class="section">
     <div class="container">
       <div class="parallax-banner reveal" id="banner">
-        <h2>Soft colours. Fine details. Jewellery that feels personal.</h2>
+        <h2>Signature blue. Soft cream. Jewellery that feels personal.</h2>
       </div>
     </div>
   </section>
@@ -1471,12 +1655,12 @@
         <div class="process-card reveal">
           <span>1</span>
           <h3>Discover</h3>
-          <p>Visitors browse collections, product styles, and Instagram content.</p>
+          <p>Visitors browse jewellery work, gallery visuals, and Instagram content.</p>
         </div>
         <div class="process-card reveal">
           <span>2</span>
           <h3>Preview</h3>
-          <p>They view jewellery work and understand the design quality before booking.</p>
+          <p>They understand Seramore’s design quality and visual identity.</p>
         </div>
         <div class="process-card reveal">
           <span>3</span>
@@ -1505,12 +1689,10 @@
           </p>
         </div>
 
-        <div class="feed-grid" id="instagramFeed">
-          <!-- Instagram API content will be injected here by JavaScript. -->
-        </div>
+        <div class="feed-grid" id="instagramFeed"></div>
 
         <p class="instagram-note reveal">
-          API setup note: Instagram media requires a valid access token. Replace INSTAGRAM_ACCESS_TOKEN and INSTAGRAM_USER_ID in the JavaScript config. For production, never expose a permanent token directly in frontend code; use a small backend/serverless function to fetch and cache media securely.
+          API setup note: Instagram media requires a valid access token. For production, do not expose a permanent token directly in frontend code; use a small backend or serverless function to fetch and cache media securely.
         </p>
       </div>
     </div>
@@ -1534,6 +1716,7 @@
           <p>
             For catalogue details, customization, appointments, or gifting recommendations, contact Seramore Jewels directly.
           </p>
+
           <div class="contact-list">
             <a href="https://wa.me/919999999999?text=Hi%20Seramore%20Jewels%2C%20I%20want%20to%20inquire%20about%20your%20jewellery%20collection." target="_blank">💬 WhatsApp Inquiry</a>
             <a href="https://www.instagram.com/" target="_blank">📸 Instagram DM</a>
@@ -1551,6 +1734,7 @@
               <input type="tel" id="phone" placeholder="Phone number" required>
             </div>
           </div>
+
           <div class="field">
             <select id="interest" required>
               <option value="">Interested in</option>
@@ -1559,11 +1743,14 @@
               <option>Bracelets</option>
               <option>Necklaces</option>
               <option>Custom Jewellery</option>
+              <option>Private Preview</option>
             </select>
           </div>
+
           <div class="field">
             <textarea id="message" placeholder="Tell us what you are looking for"></textarea>
           </div>
+
           <button type="submit" class="btn btn-primary" style="width: 100%;">Send on WhatsApp →</button>
         </form>
       </div>
@@ -1572,17 +1759,14 @@
 
   <footer class="footer">
     <p>© <span id="year"></span> Seramore Jewels. All rights reserved.</p>
-    <p>Minimal jewellery website concept for a Surat-based startup.</p>
+    <p>Static jewellery website concept for a Surat-based startup.</p>
   </footer>
 
   <script>
     const CONFIG = {
-      whatsappNumber: "919999999999", // Replace with Seramore's WhatsApp number including country code, no + sign.
-      instagramProfileUrl: "https://www.instagram.com/", // Replace with Seramore's Instagram URL.
-
-      // Instagram API placeholders. For live API, use a backend/serverless function instead of exposing tokens here.
+      whatsappNumber: "919999999999",
+      instagramProfileUrl: "https://www.instagram.com/",
       instagramAccessToken: "INSTAGRAM_ACCESS_TOKEN",
-      instagramUserId: "INSTAGRAM_USER_ID",
       instagramApiEnabled: false
     };
 
@@ -1649,7 +1833,78 @@
 
     updateParallax();
 
-    // WhatsApp contact form
+    const galleryThumbs = Array.from(document.querySelectorAll(".gallery-thumb"));
+    const galleryChips = Array.from(document.querySelectorAll(".gallery-chip"));
+    const galleryFeatureImage = document.getElementById("galleryFeatureImage");
+    const galleryFeatureTitle = document.getElementById("galleryFeatureTitle");
+    const galleryFeatureCategory = document.getElementById("galleryFeatureCategory");
+    const galleryFeatureText = document.getElementById("galleryFeatureText");
+    const galleryCounter = document.getElementById("galleryCounter");
+    const galleryPrev = document.getElementById("galleryPrev");
+    const galleryNext = document.getElementById("galleryNext");
+
+    let activeGalleryIndex = 0;
+    let activeGalleryFilter = "all";
+
+    function visibleGalleryThumbs() {
+      return galleryThumbs.filter(thumb => thumb.style.display !== "none");
+    }
+
+    function setGalleryItem(thumb) {
+      if (!thumb) return;
+
+      const visible = visibleGalleryThumbs();
+      activeGalleryIndex = visible.indexOf(thumb);
+
+      galleryThumbs.forEach(item => item.classList.remove("active"));
+      thumb.classList.add("active");
+
+      galleryFeatureImage.style.opacity = "0";
+
+      setTimeout(() => {
+        galleryFeatureImage.src = thumb.dataset.image;
+        galleryFeatureTitle.textContent = thumb.dataset.title;
+        galleryFeatureCategory.textContent = thumb.dataset.label;
+        galleryFeatureText.textContent = thumb.dataset.text;
+        galleryFeatureImage.style.opacity = "1";
+      }, 180);
+
+      galleryCounter.textContent = `${String(activeGalleryIndex + 1).padStart(2, "0")} / ${String(visible.length).padStart(2, "0")}`;
+      thumb.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+
+    galleryThumbs.forEach(thumb => {
+      thumb.addEventListener("click", () => setGalleryItem(thumb));
+    });
+
+    galleryChips.forEach(chip => {
+      chip.addEventListener("click", () => {
+        activeGalleryFilter = chip.dataset.filter;
+
+        galleryChips.forEach(item => item.classList.remove("active"));
+        chip.classList.add("active");
+
+        galleryThumbs.forEach(thumb => {
+          const shouldShow = activeGalleryFilter === "all" || thumb.dataset.category === activeGalleryFilter;
+          thumb.style.display = shouldShow ? "grid" : "none";
+        });
+
+        setGalleryItem(visibleGalleryThumbs()[0]);
+      });
+    });
+
+    galleryPrev.addEventListener("click", () => {
+      const visible = visibleGalleryThumbs();
+      const nextIndex = (activeGalleryIndex - 1 + visible.length) % visible.length;
+      setGalleryItem(visible[nextIndex]);
+    });
+
+    galleryNext.addEventListener("click", () => {
+      const visible = visibleGalleryThumbs();
+      const nextIndex = (activeGalleryIndex + 1) % visible.length;
+      setGalleryItem(visible[nextIndex]);
+    });
+
     document.getElementById("contactForm").addEventListener("submit", (event) => {
       event.preventDefault();
 
@@ -1659,13 +1914,12 @@
       const message = document.getElementById("message").value.trim();
 
       const text = encodeURIComponent(
-        `Hi Seramore Jewels,%0A%0AName: ${name}%0APhone: ${phone}%0AInterested in: ${interest}%0AMessage: ${message || "Please share catalogue details."}`
+        `Hi Seramore Jewels,\n\nName: ${name}\nPhone: ${phone}\nInterested in: ${interest}\nMessage: ${message || "Please share catalogue details."}`
       );
 
       window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=${text}`, "_blank");
     });
 
-    // Instagram feed integration
     const fallbackInstagramPosts = [
       {
         type: "REEL",
@@ -1706,7 +1960,9 @@
         const response = await fetch(endpoint);
         const data = await response.json();
 
-        if (!data.data || !Array.isArray(data.data)) throw new Error("Invalid Instagram API response");
+        if (!data.data || !Array.isArray(data.data)) {
+          throw new Error("Invalid Instagram API response");
+        }
 
         const posts = data.data.slice(0, 8).map(item => ({
           type: item.media_type,
@@ -1724,6 +1980,7 @@
 
     function renderInstagramFeed(posts) {
       const feed = document.getElementById("instagramFeed");
+
       feed.innerHTML = posts.map(post => `
         <a href="${post.permalink}" target="_blank" class="feed-card reveal visible" aria-label="Open Instagram post">
           <img src="${post.image}" alt="${post.caption.replace(/"/g, "")}" loading="lazy" />
