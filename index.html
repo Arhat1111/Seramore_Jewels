@@ -1167,6 +1167,167 @@
       transform: translateY(0);
     }
 
+
+    /* Modern About Section */
+    .about-modern-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .about-image-card {
+      position: relative;
+      min-height: 520px;
+      border-radius: 34px;
+      overflow: hidden;
+      background: var(--linen);
+      border: 1px solid var(--line);
+      box-shadow: 0 24px 70px rgba(91,115,174,.10);
+    }
+
+    .about-image-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .8s var(--ease), filter .8s var(--ease);
+      filter: saturate(.9) contrast(1.02);
+    }
+
+    .about-image-card:hover img {
+      transform: scale(1.05);
+      filter: saturate(1) contrast(1.05);
+    }
+
+    .about-image-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(37,43,59,.36), transparent 58%);
+      pointer-events: none;
+    }
+
+    .about-image-label {
+      position: absolute;
+      left: 24px;
+      bottom: 24px;
+      z-index: 2;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255,253,246,.78);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,.55);
+      color: var(--brand-blue);
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .about-content-card {
+      position: relative;
+      min-height: 520px;
+      padding: clamp(28px, 4vw, 54px);
+      border-radius: 34px;
+      background: linear-gradient(145deg, rgba(255,253,246,.98), rgba(220,229,246,.30), rgba(232,217,177,.22));
+      border: 1px solid var(--line);
+      box-shadow: 0 24px 70px rgba(91,115,174,.10);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .about-content-card::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      right: -70px;
+      top: -70px;
+      background: rgba(91,115,174,.09);
+    }
+
+    .about-content-card::after {
+      content: "";
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      left: -60px;
+      bottom: -60px;
+      background: rgba(201,171,115,.13);
+    }
+
+    .about-content-card > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .about-content-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(32px, 4vw, 54px);
+      line-height: .98;
+      letter-spacing: -.04em;
+      margin-bottom: 20px;
+      max-width: 620px;
+    }
+
+    .about-content-card p {
+      color: var(--muted);
+      line-height: 1.85;
+      font-size: 15.5px;
+      margin-bottom: 16px;
+      max-width: 620px;
+    }
+
+    .about-number {
+      position: absolute;
+      right: 28px;
+      top: 24px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(52px, 7vw, 98px);
+      line-height: 1;
+      color: rgba(91,115,174,.10);
+      z-index: 1;
+    }
+
+    .company-card {
+      background: linear-gradient(145deg, rgba(255,253,246,.98), rgba(232,217,177,.28), rgba(220,229,246,.22));
+    }
+
+    .about-mini-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .about-mini-stats div {
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(255,253,246,.70);
+      border: 1px solid var(--line);
+    }
+
+    .about-mini-stats strong {
+      display: block;
+      font-family: "Playfair Display", serif;
+      color: var(--brand-blue);
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+
+    .about-mini-stats span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
     @media (max-width: 980px) {
       .nav-links,
       .nav-cta {
@@ -1198,9 +1359,15 @@
 
       .hero-grid,
       .about-grid,
+      .about-modern-grid,
       .contact-grid,
       .jewellery-gallery {
         grid-template-columns: 1fr;
+      }
+
+      .about-image-card,
+      .about-content-card {
+        min-height: 460px;
       }
 
       .hero-card-wrap {
@@ -1311,6 +1478,30 @@
         min-height: 390px;
       }
 
+      .about-image-card,
+      .about-content-card {
+        min-height: auto;
+        border-radius: 26px;
+      }
+
+      .about-image-card {
+        min-height: 360px;
+      }
+
+      .about-content-card {
+        padding: 28px 22px;
+      }
+
+      .about-mini-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .about-number {
+        font-size: 58px;
+        right: 20px;
+        top: 18px;
+      }
+
       .stats,
       .process-grid,
       .feed-grid,
@@ -1364,6 +1555,196 @@
         padding: 28px 18px;
       }
     }
+  
+    /* Professional refinement layer */
+    body {
+      background:
+        radial-gradient(circle at 8% 12%, rgba(220,229,246,.38), transparent 24%),
+        radial-gradient(circle at 92% 18%, rgba(232,217,177,.30), transparent 25%),
+        linear-gradient(180deg, #fff9e8 0%, #fffdf6 48%, #f7f1dc 100%);
+    }
+
+    .navbar {
+      height: 74px;
+      border: 1px solid rgba(91,115,174,.18);
+      background: rgba(255,253,246,.86);
+      box-shadow: 0 18px 50px rgba(37,43,59,.08);
+    }
+
+    .navbar.scrolled {
+      height: 64px;
+      background: rgba(255,253,246,.96);
+      box-shadow: 0 16px 44px rgba(37,43,59,.10);
+    }
+
+    .nav-links {
+      gap: 24px;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .nav-cta,
+    .btn-primary {
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-blue-dark));
+      box-shadow: 0 16px 34px rgba(91,115,174,.22);
+    }
+
+    .nav-cta:hover,
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 42px rgba(91,115,174,.28);
+    }
+
+    .btn-secondary {
+      background: rgba(255,253,246,.72);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero {
+      padding-top: 170px;
+    }
+
+    .hero::before {
+      background:
+        linear-gradient(120deg, rgba(255,253,246,.72), rgba(255,253,246,.22)),
+        radial-gradient(circle at 75% 18%, rgba(220,229,246,.85), transparent 34%),
+        radial-gradient(circle at 18% 72%, rgba(232,217,177,.48), transparent 36%),
+        radial-gradient(circle at 86% 78%, rgba(175,180,147,.14), transparent 30%);
+    }
+
+    .hero h1 {
+      max-width: 820px;
+    }
+
+    .hero-card {
+      border-radius: 38px;
+      box-shadow: 0 28px 80px rgba(37,43,59,.14);
+    }
+
+    .floating-badge {
+      box-shadow: 0 20px 55px rgba(37,43,59,.12);
+    }
+
+    .section {
+      padding: 118px 7vw;
+    }
+
+    .section-head {
+      margin-bottom: 54px;
+    }
+
+    .section-kicker {
+      color: var(--brand-blue);
+      letter-spacing: .18em;
+      font-size: 11px;
+    }
+
+    .section-title {
+      color: var(--text);
+    }
+
+    .about-content-card,
+    .about-image-card,
+    .products-wrap,
+    .jewellery-gallery,
+    .process-card,
+    .contact-card,
+    .contact-form {
+      border: 1px solid rgba(91,115,174,.14);
+      box-shadow: 0 24px 70px rgba(37,43,59,.08);
+    }
+
+    .about-content-card:hover,
+    .process-card:hover,
+    .contact-card:hover,
+    .contact-form:hover {
+      box-shadow: 0 28px 80px rgba(37,43,59,.11);
+    }
+
+    .marquee {
+      background: linear-gradient(90deg, var(--brand-blue-dark), var(--brand-blue), var(--brand-blue-dark));
+    }
+
+    .showcase-mosaic {
+      border-radius: 30px;
+      box-shadow: none;
+    }
+
+    .mosaic-tile img {
+      filter: saturate(.88) contrast(1.02) brightness(.98);
+    }
+
+    .gallery-feature,
+    .gallery-slider-shell {
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.20);
+    }
+
+    .gallery-chip-row {
+      background: rgba(255,253,246,.78);
+      border-radius: 22px;
+    }
+
+    .gallery-chip {
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+
+    .process-card {
+      min-height: 250px;
+    }
+
+    .process-card h3,
+    .contact-card h3,
+    .about-content-card h3 {
+      color: var(--text);
+    }
+
+    .contact-list a,
+    .contact-list div,
+    input,
+    textarea,
+    select {
+      background: rgba(255,253,246,.82);
+    }
+
+    .footer {
+      background: rgba(255,253,246,.48);
+      backdrop-filter: blur(10px);
+    }
+
+    @media (max-width: 980px) {
+      .navbar.open .nav-links a {
+        padding: 10px 2px;
+      }
+
+      .hero {
+        padding-top: 138px;
+      }
+
+      .section {
+        padding: 86px 6vw;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .section {
+        padding: 76px 18px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .hero h1 {
+        letter-spacing: -0.055em;
+      }
+    }
+
   </style>
 </head>
 
@@ -1380,11 +1761,11 @@
     </a>
 
     <div class="nav-links">
-      <a href="#">Home</a>
+      <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#products">Showcase</a>
       <a href="#gallery">Gallery</a>
-      <a href="#info">Info</a>
+      <a href="#instagram">Reels</a>
       <a href="#contact">Contact</a>
     </div>
 
@@ -1395,11 +1776,11 @@
   <header class="hero" id="home">
     <div class="hero-grid">
       <div class="hero-copy reveal">
-        <div class="eyebrow"><span></span> Surat based jewellery startup</div>
-        <h1>Jewellery with <span class="gold-text">signature elegance.</span></h1>
+        <div class="eyebrow"><span></span> Fine jewellery studio based in Surat</div>
+        <h1>Timeless jewellery with <span class="gold-text">refined elegance.</span></h1>
         <p>
-          Seramore Jewels creates refined jewellery pieces with a graceful identity —
-          warm cream, signature blue, polished details, and a premium yet personal feel.
+          Seramore Jewels presents thoughtfully crafted jewellery with a premium visual identity,
+          personal consultation experience, and a graceful design language inspired by modern luxury.
         </p>
         <div class="hero-actions">
           <a href="#products" class="btn btn-primary">View Jewellery Work →</a>
@@ -1427,42 +1808,66 @@
       <div class="section-head reveal">
         <div>
           <div class="section-kicker">About Seramore</div>
-          <h2 class="section-title">Minimal designs, crafted with a premium jewellery feel.</h2>
+          <h2 class="section-title">A jewellery house built on elegance, trust and personal attention.</h2>
         </div>
         <p class="section-text">
-          Built in Surat, Seramore Jewels is a young jewellery brand focused on clean silhouettes, polished detailing, and pieces that feel timeless instead of loud.
+          Seramore Jewels is a Surat-based jewellery brand focused on refined design, graceful styling and direct customer relationships.
         </p>
       </div>
 
-      <div class="about-grid">
-        <div class="about-card reveal">
-          <h3>Designed for elegance, not excess.</h3>
+      <div class="about-modern-grid">
+        <div class="about-image-card reveal">
+          <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1100&q=85" alt="Seramore Jewels founder and CEO">
+          <div class="about-image-label">
+            <span>Leadership</span>
+          </div>
+        </div>
+
+        <div class="about-content-card reveal">
+          <span class="about-number">01</span>
+          <div class="section-kicker">About the CEO</div>
+          <h3>A student today. A jewellery entrepreneur in the making. Dreaming big, designing bigger.</h3>
           <p>
-            The brand direction is simple: make jewellery that looks premium, feels personal, and can be worn across weddings, family functions, gifting moments, and everyday styling.
+            Hi, I’m Aagna Ankit Shah, founder of Seramore Jewels. 
+            At just 18, I’m still a student, pursuing my BBA in Jewellery Management, but my journey with jewellery began long before any classroom. I’ve always been fascinated by the way a single piece of jewellery can hold emotions, memories, and meaning.
           </p>
           <p>
-            As a startup, the website is built for brand presence first — showcasing jewellery work, Instagram reels, and direct inquiries without online selling for now.
+            What started as a passion for designing slowly turned into a dream. Today, I continue to learn and grow every day—exploring jewellery design, understanding gemstones and diamonds, and building my skills in manual & CAD. While I’m only at the beginning of my journey, I believe every great dream starts with a single step.
+          </p>
+        </div>
+
+        <div class="about-content-card reveal company-card">
+          <span class="about-number">02</span>
+          <div class="section-kicker">About the Company</div>
+          <h3>Seramore Jewels, crafted for a refined jewellery experience.</h3>
+          <p>
+            Seramore Jewels is my way of turning creativity into something tangible—creating pieces that feel modern, meaningful, and timeless. As a young entrepreneur, I bring fresh ideas, endless curiosity, and a commitment to learning with every design I create.
+          </p>
+          <p>
+            This is more than a jewellery brand to me. It’s a dream in the making, built with passion, purpose, and the belief that age should never limit ambition.
           </p>
 
-          <div class="stats">
-            <div class="stat">
-              <strong>01</strong>
-              <span>New Brand</span>
+          <div class="about-mini-stats">
+            <div>
+              <strong>Surat</strong>
+              <span>Based Brand</span>
             </div>
-            <div class="stat">
-              <strong>04</strong>
-              <span>Mood Stories</span>
+            <div>
+              <strong>Direct</strong>
+              <span>Booking Model</span>
             </div>
-            <div class="stat">
-              <strong>100%</strong>
-              <span>Inquiry Based</span>
+            <div>
+              <strong>Premium</strong>
+              <span>Jewellery Feel</span>
             </div>
           </div>
         </div>
 
-        <div class="about-visual reveal parallax-image">
-          <!-- <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=1300&q=85" alt="Jewellery styling" /> -->
-           <img src="IMG_3119.PNG" alt="">
+        <div class="about-image-card reveal">
+          <img src="IMG_3119.PNG" alt="Seramore Jewels company jewellery styling">
+          <div class="about-image-label">
+            <span>Seramore Jewels</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1480,10 +1885,10 @@
       <div class="section-head reveal">
         <div>
           <div class="section-kicker">Jewellery Showcase</div>
-          <h2 class="section-title">An editorial showcase of Seramore’s jewellery work.</h2>
+          <h2 class="section-title">A refined showcase of signature jewellery pieces.</h2>
         </div>
         <p class="section-text">
-          This is not an online product page. It is a refined visual portfolio created to help visitors understand Seramore’s design style before contacting the brand directly.
+          This section presents selected jewellery work as a premium visual portfolio, allowing visitors to understand the brand’s design language before contacting the team directly.
         </p>
       </div>
 
@@ -1547,7 +1952,7 @@
       <div class="section-head reveal">
         <div>
           <div class="section-kicker">Gallery</div>
-          <h2 class="section-title">An interactive jewellery gallery with a refined editorial feel.</h2>
+          <h2 class="section-title">A curated gallery built for discovery and trust.</h2>
         </div>
         <p class="section-text">
           Browse Seramore’s visual world through styling moments, close details, craft shots, and soft brand imagery.
@@ -1645,7 +2050,7 @@
     <div class="container">
       <div class="section-head reveal">
         <div>
-          <div class="section-kicker" id="info">How it works</div>
+          <div class="section-kicker">How it works</div>
           <h2 class="section-title">Simple inquiry flow for a young brand.</h2>
         </div>
         <p class="section-text">
