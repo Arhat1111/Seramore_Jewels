@@ -2762,6 +2762,563 @@
       color: var(--mauve);
     }
 
+  
+    /* Clean butter-yellow logo theme with pastel accents */
+    :root {
+      --bg: #FFF3B8;
+      --bg-soft: #FFF6CC;
+      --text: #51341F;
+      --muted: #806A53;
+
+      --brand-blue: #51341F;
+      --brand-blue-dark: #3A2414;
+      --brand-blue-soft: #FFE8B8;
+
+      --ivory: #FFFBE8;
+      --cream: #FFF3B8;
+      --linen: #F7E5BA;
+      --champagne: #FFD8B8;
+      --stone: #DCC7B4;
+      --taupe: #B28D75;
+
+      --gold: #D7A94E;
+      --gold-soft: #FFE8B8;
+
+      --blush: #FFD8DD;
+      --sage: #E4E8B6;
+      --sky: #EAF2F8;
+      --butter: #FFF3B8;
+
+      --sand: #F7E5BA;
+      --mocha: #F4B89E;
+      --chocolate: #8A5A38;
+      --espresso: #51341F;
+      --baby-pink: #FFD8DD;
+      --dusty-rose: #D99AAA;
+      --mauve: #B97886;
+      --light-sage: #E4E8B6;
+      --meadow: #C9D485;
+      --olive: #AAB36B;
+      --moss: #747744;
+
+      --coral: #FFB399;
+      --coral-soft: #FFD6C8;
+      --coral-light: #FFE7DA;
+
+      --line: rgba(81, 52, 31, 0.13);
+      --shadow: 0 22px 60px rgba(81, 52, 31, 0.10);
+    }
+
+    body {
+      background: #FFF3B8;
+      color: var(--text);
+    }
+
+    .cursor-glow {
+      background: radial-gradient(circle, rgba(255,179,153,.28), transparent 65%);
+    }
+
+    .navbar {
+      background: rgba(255, 251, 232, 0.92);
+      border-color: rgba(81,52,31,.14);
+      box-shadow: 0 16px 44px rgba(81,52,31,.12);
+    }
+
+    .navbar.scrolled,
+    .navbar.open {
+      background: rgba(255, 251, 232, 0.98);
+      box-shadow: 0 14px 38px rgba(81,52,31,.14);
+    }
+
+    .logo,
+    .nav-links,
+    .nav-links a {
+      color: var(--text);
+    }
+
+    .nav-links a:hover {
+      color: var(--mauve);
+    }
+
+    .nav-links a::after {
+      background: var(--coral);
+    }
+
+    .logo-mark {
+      background: var(--ivory);
+      border-color: rgba(81,52,31,.12);
+      box-shadow: 0 10px 24px rgba(81,52,31,.10);
+    }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--coral-light), var(--coral));
+      color: var(--text);
+      border: 1px solid rgba(81,52,31,.12);
+      box-shadow: 0 12px 26px rgba(255,179,153,.18);
+    }
+
+    .nav-cta:hover {
+      background: linear-gradient(135deg, var(--coral), var(--dusty-rose));
+      color: var(--ivory);
+    }
+
+    .btn-primary,
+    .menu-btn {
+      background: linear-gradient(135deg, var(--coral), var(--dusty-rose));
+      color: var(--ivory);
+      box-shadow: 0 16px 34px rgba(255,179,153,.22);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--dusty-rose), var(--mauve));
+      color: var(--ivory);
+    }
+
+    .btn-secondary {
+      background: rgba(255,251,232,.88);
+      color: var(--text);
+      border-color: rgba(81,52,31,.13);
+    }
+
+    .hero::before {
+      background:
+        radial-gradient(circle at 78% 18%, rgba(255,179,153,.30), transparent 30%),
+        radial-gradient(circle at 18% 72%, rgba(255,216,221,.26), transparent 33%),
+        radial-gradient(circle at 86% 78%, rgba(228,232,182,.32), transparent 28%);
+    }
+
+    .eyebrow {
+      color: var(--mauve);
+      background: rgba(255,251,232,.84);
+      border-color: rgba(81,52,31,.12);
+    }
+
+    .eyebrow span,
+    .ring-orbit::before {
+      background: var(--coral);
+      box-shadow: 0 0 0 8px rgba(255,179,153,.18);
+    }
+
+    .ring-orbit {
+      border-color: rgba(255,179,153,.36);
+    }
+
+    .hero h1 .gold-text,
+    .section-kicker,
+    .stat strong,
+    .gallery-thumb small,
+    .about-mini-stats strong {
+      color: var(--mauve);
+    }
+
+    .hero-card,
+    .about-content-card,
+    .about-image-card,
+    .products-wrap,
+    .jewellery-gallery,
+    .contact-card,
+    .contact-form {
+      background: linear-gradient(145deg, rgba(255,251,232,.96), rgba(255,232,184,.48), rgba(255,216,221,.18));
+      border-color: rgba(81,52,31,.12);
+      box-shadow: 0 20px 54px rgba(81,52,31,.10);
+    }
+
+    .about-mini-stats div,
+    .stat,
+    .gallery-slider-shell,
+    .gallery-chip-row,
+    .gallery-thumb,
+    .contact-list a,
+    .contact-list div,
+    input,
+    textarea,
+    select,
+    .showcase-more-cta {
+      background: rgba(255,251,232,.88);
+      border-color: rgba(81,52,31,.12);
+    }
+
+    .seramore-writing-slider {
+      background: linear-gradient(90deg, var(--coral-light), var(--coral), var(--baby-pink), var(--light-sage), var(--coral-light));
+      border-top: 1px solid rgba(81,52,31,.10);
+      border-bottom: 1px solid rgba(81,52,31,.10);
+      box-shadow: 0 16px 38px rgba(81,52,31,.08);
+    }
+
+    .writing-slider-track,
+    .writing-slider-track span {
+      color: var(--text);
+      text-shadow: none;
+    }
+
+    .writing-slider-track b {
+      color: var(--mauve);
+    }
+
+    .showcase-mosaic {
+      background: var(--ivory);
+      border-color: rgba(81,52,31,.12);
+    }
+
+    .tile-duo { background: var(--sand); }
+    .tile-linen { background: var(--coral-light); }
+    .tile-sunset { background: linear-gradient(135deg, var(--coral-light), var(--coral-soft), var(--light-sage)); }
+    .tile-butter { background: var(--light-sage); }
+    .tile-leaf { background: var(--meadow); }
+    .tile-deep { background: linear-gradient(135deg, var(--coral), var(--dusty-rose)) !important; }
+
+    .mosaic-overlay::after,
+    .gallery-feature::after {
+      background: linear-gradient(to top, rgba(81,52,31,.28), transparent 56%);
+    }
+
+    .gallery-chip.active,
+    .gallery-chip:hover,
+    .gallery-arrow:hover {
+      background: linear-gradient(135deg, var(--coral), var(--dusty-rose));
+      color: var(--ivory);
+    }
+
+    .gallery-thumb.active,
+    .gallery-thumb:hover {
+      background: rgba(255,231,218,.72);
+      border-color: rgba(255,179,153,.38);
+      box-shadow: 0 12px 30px rgba(81,52,31,.08);
+    }
+
+    .quote-banner {
+      background:
+        linear-gradient(rgba(81,52,31,.10), rgba(255,179,153,.30)),
+        url("https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1800&q=85");
+      box-shadow: 0 24px 68px rgba(81,52,31,.12);
+    }
+
+    .quote-banner h2,
+    .quote-banner p {
+      text-shadow: 0 12px 30px rgba(81,52,31,.24);
+    }
+
+    .process-card {
+      background: linear-gradient(145deg, rgba(255,251,232,.94), rgba(255,231,218,.40), rgba(228,232,182,.24));
+      border-color: rgba(81,52,31,.12);
+      box-shadow: 0 20px 52px rgba(81,52,31,.08);
+    }
+
+    .process-card span {
+      background: linear-gradient(145deg, var(--coral-light), var(--coral));
+      color: var(--text);
+    }
+
+    .instagram-section {
+      background: linear-gradient(145deg, var(--coral), var(--dusty-rose) 52%, var(--coral-light));
+      color: var(--ivory);
+    }
+
+    .instagram-section .section-kicker,
+    .instagram-section .section-text,
+    .instagram-note {
+      color: rgba(255,251,232,.84);
+    }
+
+    .footer {
+      background: rgba(255,251,232,.70);
+      border-color: rgba(81,52,31,.10);
+    }
+
+  
+    /* Logo-inspired beige + pastel pink theme */
+    :root {
+      /* Main background from logo's beige tone */
+      --bg: #EEE9D1;
+      --bg-soft: #F5F0DD;
+      --ivory: #FCFAF1;
+      --cream: #EEE9D1;
+      --linen: #F3EBD8;
+      --butter: #EEE9D1;
+
+      /* Replace blue with pastel pink family */
+      --brand-blue: #E8B9C6;
+      --brand-blue-dark: #D99AAA;
+      --brand-blue-soft: #F8DDE5;
+
+      /* Core text */
+      --text: #5A433A;
+      --muted: #8A736C;
+
+      /* Supporting tones */
+      --champagne: #F4D9C8;
+      --stone: #D9C8BF;
+      --taupe: #B79D95;
+
+      --gold: #D8B37B;
+      --gold-soft: #F6E7C7;
+
+      --blush: #FCE4EA;
+      --baby-pink: #FAD6E0;
+      --dusty-rose: #E7B1BE;
+      --mauve: #C98D9D;
+      --coral: #FFB399;
+      --coral-soft: #FFD8C8;
+      --coral-light: #FFEAE1;
+
+      --sage: #E8EBCB;
+      --light-sage: #E8EBCB;
+      --meadow: #D7DCA4;
+      --olive: #B9C184;
+      --moss: #8B8B61;
+
+      --sand: #F3E5D4;
+      --mocha: #EABAA4;
+      --chocolate: #A27462;
+      --espresso: #7A584B;
+
+      --sky: #F7EEF3;
+
+      --line: rgba(90, 67, 58, 0.12);
+      --shadow: 0 22px 60px rgba(201, 141, 157, 0.10);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .cursor-glow {
+      background: radial-gradient(circle, rgba(250,214,224,.35), transparent 65%);
+    }
+
+    .navbar {
+      background: rgba(252, 250, 241, 0.92);
+      border-color: rgba(90,67,58,.10);
+      box-shadow: 0 16px 40px rgba(201,141,157,.10);
+    }
+
+    .navbar.scrolled,
+    .navbar.open {
+      background: rgba(252, 250, 241, 0.97);
+      box-shadow: 0 14px 36px rgba(201,141,157,.12);
+    }
+
+    .logo,
+    .nav-links,
+    .nav-links a {
+      color: var(--text);
+    }
+
+    .nav-links a:hover {
+      color: var(--mauve);
+    }
+
+    .nav-links a::after {
+      background: var(--dusty-rose);
+    }
+
+    .logo-mark {
+      background: var(--ivory);
+      border-color: rgba(201,141,157,.18);
+      box-shadow: 0 10px 24px rgba(201,141,157,.10);
+    }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--baby-pink), var(--dusty-rose));
+      color: var(--text);
+      border: 1px solid rgba(201,141,157,.18);
+      box-shadow: 0 12px 26px rgba(201,141,157,.16);
+    }
+
+    .nav-cta:hover {
+      background: linear-gradient(135deg, var(--dusty-rose), var(--mauve));
+      color: var(--ivory);
+    }
+
+    .btn-primary,
+    .menu-btn {
+      background: linear-gradient(135deg, var(--dusty-rose), var(--mauve));
+      color: var(--ivory);
+      box-shadow: 0 16px 34px rgba(201,141,157,.18);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--mauve), var(--coral));
+      color: var(--ivory);
+    }
+
+    .btn-secondary {
+      background: rgba(252,250,241,.88);
+      color: var(--text);
+      border-color: rgba(90,67,58,.11);
+    }
+
+    .hero::before {
+      background:
+        radial-gradient(circle at 76% 18%, rgba(250,214,224,.42), transparent 32%),
+        radial-gradient(circle at 18% 74%, rgba(255,234,225,.36), transparent 34%),
+        radial-gradient(circle at 86% 78%, rgba(232,235,203,.28), transparent 28%);
+    }
+
+    .eyebrow {
+      color: var(--mauve);
+      background: rgba(252,250,241,.82);
+      border-color: rgba(201,141,157,.16);
+    }
+
+    .eyebrow span,
+    .ring-orbit::before {
+      background: var(--dusty-rose);
+      box-shadow: 0 0 0 8px rgba(231,177,190,.18);
+    }
+
+    .ring-orbit {
+      border-color: rgba(231,177,190,.34);
+    }
+
+    .hero h1 .gold-text,
+    .section-kicker,
+    .stat strong,
+    .gallery-thumb small,
+    .about-mini-stats strong {
+      color: var(--mauve);
+    }
+
+    .hero-card,
+    .about-content-card,
+    .about-image-card,
+    .products-wrap,
+    .jewellery-gallery,
+    .contact-card,
+    .contact-form {
+      background: linear-gradient(
+        145deg,
+        rgba(252,250,241,.96),
+        rgba(250,214,224,.22),
+        rgba(243,235,216,.46)
+      );
+      border-color: rgba(90,67,58,.10);
+      box-shadow: 0 20px 52px rgba(201,141,157,.10);
+    }
+
+    .about-mini-stats div,
+    .stat,
+    .gallery-slider-shell,
+    .gallery-chip-row,
+    .gallery-thumb,
+    .contact-list a,
+    .contact-list div,
+    input,
+    textarea,
+    select,
+    .showcase-more-cta {
+      background: rgba(252,250,241,.88);
+      border-color: rgba(90,67,58,.10);
+    }
+
+    .seramore-writing-slider {
+      background: linear-gradient(90deg, var(--baby-pink), var(--coral-light), var(--blush), var(--light-sage), var(--baby-pink));
+      border-top: 1px solid rgba(201,141,157,.16);
+      border-bottom: 1px solid rgba(201,141,157,.16);
+      box-shadow: 0 16px 36px rgba(201,141,157,.10);
+    }
+
+    .writing-slider-track,
+    .writing-slider-track span {
+      color: var(--text);
+      text-shadow: none;
+    }
+
+    .writing-slider-track b {
+      color: var(--mauve);
+    }
+
+    .showcase-mosaic {
+      background: var(--ivory);
+      border-color: rgba(90,67,58,.10);
+    }
+
+    .tile-duo { background: var(--sand); }
+    .tile-linen { background: var(--baby-pink); }
+    .tile-sunset { background: linear-gradient(135deg, var(--coral-light), var(--baby-pink), var(--light-sage)); }
+    .tile-butter { background: var(--light-sage); }
+    .tile-leaf { background: #DCE2B7; }
+    .tile-deep { background: linear-gradient(135deg, var(--dusty-rose), var(--mauve)) !important; }
+
+    .mosaic-overlay::after,
+    .gallery-feature::after {
+      background: linear-gradient(to top, rgba(90,67,58,.26), transparent 56%);
+    }
+
+    .gallery-chip.active,
+    .gallery-chip:hover,
+    .gallery-arrow:hover {
+      background: linear-gradient(135deg, var(--dusty-rose), var(--mauve));
+      color: var(--ivory);
+    }
+
+    .gallery-thumb.active,
+    .gallery-thumb:hover {
+      background: rgba(250,214,224,.42);
+      border-color: rgba(201,141,157,.28);
+      box-shadow: 0 12px 28px rgba(201,141,157,.08);
+    }
+
+    .quote-banner {
+      background:
+        linear-gradient(rgba(90,67,58,.12), rgba(201,141,157,.20)),
+        url("https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1800&q=85");
+      box-shadow: 0 24px 64px rgba(201,141,157,.12);
+    }
+
+    .process-card {
+      background: linear-gradient(145deg, rgba(252,250,241,.94), rgba(250,214,224,.26), rgba(232,235,203,.22));
+      border-color: rgba(90,67,58,.10);
+      box-shadow: 0 20px 48px rgba(201,141,157,.08);
+    }
+
+    .process-card span {
+      background: linear-gradient(145deg, var(--coral-light), var(--baby-pink));
+      color: var(--text);
+    }
+
+    .instagram-section {
+      background: linear-gradient(145deg, var(--baby-pink), var(--dusty-rose) 52%, var(--coral-light));
+      color: var(--ivory);
+    }
+
+    .instagram-section .section-kicker,
+    .instagram-section .section-text,
+    .instagram-note {
+      color: rgba(252,250,241,.86);
+    }
+
+    .footer {
+      background: rgba(252,250,241,.72);
+      border-color: rgba(90,67,58,.10);
+    }
+
+  
+    /* Exact logo background color update */
+    :root {
+      --logo-bg: #FFF9E0;
+      --bg: #FFF9E0;
+      --cream: #FFF9E0;
+      --butter: #FFF9E0;
+    }
+
+    html,
+    body {
+      background: #FFF9E0 !important;
+    }
+
+    .hero,
+    .section,
+    .quote-section,
+    .process-section {
+      background: transparent !important;
+    }
+
+    .footer {
+      background: rgba(255, 252, 239, 0.72);
+    }
+
   </style>
 </head>
 
