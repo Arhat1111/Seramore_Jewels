@@ -4450,11 +4450,11 @@
       <a href="#about">About</a>
       <a href="#products">Showcase</a>
       <a href="#gallery">Gallery</a>
-      <a href="#instagram">Reels</a>
+      <!-- <a href="#instagram">Reels</a> -->
       <a href="#contact">Contact</a>
     </div>
 
-    <a href="https://www.instagram.com/" target="_blank" class="nav-cta">Instagram</a>
+    <a href="https://www.instagram.com/seramorejewels/" target="_blank" rel="noopener" class="nav-cta">Instagram</a>
     <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
   </nav>
 
@@ -4766,7 +4766,7 @@
     </div>
   </section>
 
-  <section class="instagram-section" id="instagram">
+  <!-- <section class="instagram-section" id="instagram">
     <div class="section">
       <div class="container">
         <div class="section-head reveal">
@@ -4775,18 +4775,14 @@
             <h2 class="section-title">Live social proof from the Seramore feed.</h2>
           </div>
           <p class="section-text">
-            Add Seramore’s Instagram username and API token in the JavaScript configuration to load the brand’s live Instagram feed. Until then, this section shows elegant fallback cards.
+            Latest posts from @seramorejewels. The website loads live Instagram media through a secure API endpoint and shows fallback cards only if Instagram is unavailable.
           </p>
         </div>
 
         <div class="feed-grid" id="instagramFeed"></div>
-
-        <!-- <p class="instagram-note reveal">
-          Instagram setup note: add the brand Instagram username and connect Instagram Basic Display or Graph API through a secure backend/serverless function. A live feed requires a valid access token; the static fallback feed will show until connected.
-        </p> -->
       </div>
     </div>
-  </section>
+  </section> -->
 
   <section class="section" id="contact">
     <div class="container">
@@ -4796,7 +4792,7 @@
           <h2 class="section-title">Start with inquiries, appointments and DMs.</h2>
         </div>
         <p class="section-text">
-          Replace the phone number and Instagram link below with Seramore’s real contact details before publishing.
+          Connect with Seramore Jewels directly through WhatsApp or Instagram for catalogue details, appointments and custom jewellery inquiries.
         </p>
       </div>
 
@@ -4808,8 +4804,8 @@
           </p>
 
           <div class="contact-list">
-            <a href="https://wa.me/919999999999?text=Hi%20Seramore%20Jewels%2C%20I%20want%20to%20inquire%20about%20your%20jewellery%20collection." target="_blank">💬 WhatsApp Inquiry</a>
-            <a href="https://www.instagram.com/" target="_blank">📸 Instagram DM</a>
+            <a href="https://wa.me/919913939182?text=Hi%20Seramore%20Jewels%2C%20I%20want%20to%20inquire%20about%20your%20jewellery%20collection." target="_blank">💬 WhatsApp Inquiry</a>
+            <a href="https://www.instagram.com/seramorejewels/" target="_blank" rel="noopener">📸 Instagram DM @seramorejewels</a>
             <div>📍 Surat, Gujarat</div>
             <a href="mailto:hello@seramorejewels.com">✉️ hello@seramorejewels.com</a>
           </div>
@@ -4854,11 +4850,12 @@
 
   <script>
     const CONFIG = {
-      whatsappNumber: "919999999999",
-      instagramUsername: "SERAMORE_INSTAGRAM_USERNAME",
-      instagramProfileUrl: "https://www.instagram.com/SERAMORE_INSTAGRAM_USERNAME/",
-      instagramAccessToken: "INSTAGRAM_ACCESS_TOKEN",
-      instagramApiEnabled: false
+      whatsappNumber: "919913939182",
+      instagramUsername: "seramorejewels",
+      instagramProfileUrl: "https://www.instagram.com/seramorejewels/",
+      instagramAccessToken: "",
+      instagramApiEnabled: true,
+      instagramApiEndpoint: "/api/instagram-feed"
     };
 
     const navbar = document.getElementById("navbar");
@@ -5047,8 +5044,13 @@
       }
 
       try {
-        const endpoint = `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&access_token=${CONFIG.instagramAccessToken}`;
-        const response = await fetch(endpoint);
+        const endpoint = CONFIG.instagramApiEndpoint || `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&access_token=${CONFIG.instagramAccessToken}`;
+        const response = await fetch(endpoint, { headers: { "Accept": "application/json" } });
+
+        if (!response.ok) {
+          throw new Error(`Instagram feed request failed: ${response.status}`);
+        }
+
         const data = await response.json();
 
         if (!data.data || !Array.isArray(data.data)) {
@@ -5073,7 +5075,7 @@
       const feed = document.getElementById("instagramFeed");
 
       feed.innerHTML = posts.map(post => `
-        <a href="${post.permalink}" target="_blank" class="feed-card reveal visible" aria-label="Open Instagram post">
+        <a href="${post.permalink}" target="_blank" rel="noopener" class="feed-card reveal visible" aria-label="Open Instagram post">
           <img src="${post.image}" alt="${post.caption.replace(/"/g, "")}" loading="lazy" />
           <div class="play-icon">${post.type === "VIDEO" || post.type === "REEL" ? "▶" : "↗"}</div>
         </a>
