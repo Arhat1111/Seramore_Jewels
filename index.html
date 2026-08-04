@@ -8025,6 +8025,32 @@ section#gallery {
 <textarea id="message" placeholder="Tell us what you are looking for"></textarea>
 </div>
 <button class="btn btn-primary" style="width: 100%;" type="submit">Send on WhatsApp →</button>
+<script>
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const interest = document.getElementById("interest").value;
+    const message = document.getElementById("message").value.trim();
+
+    // Replace with your WhatsApp number
+    const whatsappNumber = "919913939182"; // Example: "1234567890" (without '+' or '00')
+
+    const text = `New Jewellery Enquiry
+
+Name: ${name}
+ Phone: ${phone}
+Interested In: ${interest}
+
+Message:
+${message}`;
+
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+
+    window.open(url, "_blank");
+});
+</script>
 </form>
 </div>
 </div>
